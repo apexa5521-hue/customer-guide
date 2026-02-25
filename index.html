@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <h1>👋 Hello World!</h1><!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <!-- ========== META ========== -->
@@ -60,6 +71,16 @@ html, body {
   box-shadow: -4px 0 20px rgba(0,0,0,0.15);
 }
 #sidebar.open { right: 0; }
+
+/* Active link highlight */
+#sidebar nav a.active {
+  background: var(--teal);
+  color: #fff;
+}
+#sidebar nav a.active .nav-number {
+  background: #fff;
+  color: var(--teal);
+}
 
 .sidebar-logo {
   text-align: center;
@@ -383,7 +404,7 @@ footer {
   .standards-grid { grid-template-columns: 1fr; }
 }
 @media (min-width: 1024px) {
-  #sidebar { right: 0; box-shadow: none; border-left: 2px solid var(--gray-border); }
+  #sidebar { right: 0 !important; box-shadow: none !important; border-left: 2px solid var(--gray-border); transition: none !important; }
   #overlay { display: none !important; }
   #main { margin-right: var(--sidebar-width); }
   #topbar { right: var(--sidebar-width); }
@@ -462,7 +483,7 @@ footer {
     <a href="#cover"><span class="nav-number">0</span> الغلاف</a>
     <a href="#s1"><span class="nav-number">1</span> السياسات الداخلية</a>
     <a href="#s-standards"><span class="nav-number">2</span> المعايير التشغيلية</a>
-    <a href="#s2"><span class="nav-number">3</span> تقسيم الأسنان للكبار</a>
+    <a href="#s2"><span class="nav-number">3</span> دل الأسنان للكبار</a>
     <a href="#s3"><span class="nav-number">4</span> علاج العصب (RCT)</a>
     <a href="#s4"><span class="nav-number">5</span> التقويم (Ortho)</a>
     <a href="#s5"><span class="nav-number">6</span> الجراحة (Surgery)</a>
@@ -540,10 +561,9 @@ footer {
   <div class="sub-heading">السياسات العامة للأسعار والإجراءات</div>
   <ul>
     <li>فتح الملف والكشف والاستشارة عند الطبيب العام مجاناً.</li>
-    <li>سعر الكشف عند الاستشاريين 150 ريال، واستشاري الأطفال 100 ريال.</li>
-    <li>عند تحويل المراجع من قبل الطبيب العام إلى الاستشاري، تكون رسوم الكشف مجانية.</li>
+    <li>سعر الكشف عند الاستشاريين 150 ريال، واستشاري الأطفال 150 ريال.</li>
+    <li>عند تحويل المراجع من قبل الطبيب العام إلى الاستشاري (تحويل داخلي)، تكون رسوم الكشف مجانية.</li>
     <li>استرجاع المبلغ: يجب تعبئة نموذج الاسترجاع وتوقيع الطبيب عليه لتأكيد الاسترجاع. مدة التحويل تتراوح بين 7 إلى 10 أيام عمل.</li>
-    <li>طريقة السداد عند متخصصي العصب: دفع نصف قيمة العلاج عند الكشف لتحديد موعد علاجي، والنصف الآخر عند انتهاء جلسة العصب وقبل تحويله لموعد الحشوة النهائية.</li>
     <li>يجب عدم إقفال جدول الطبيب أو عمل أي خصم إلا بتوجيه مباشر من مدير الفرع أو من ينوب عنه.</li>
   </ul>
 
@@ -562,7 +582,7 @@ footer {
     <div class="standard-card">
       <h3>نبرة الصوت</h3>
       <ul>
-        <li>التحدث بنبرة هادئة وواضحة</li>
+        <li>التحدث بنبرة مهذبة وواضحة</li>
         <li>استخدام أسلوب مهذب ومحترم</li>
         <li>تجنب رفع الصوت أو الجدال</li>
         <li>الابتعاد عن الكلمات السلبية</li>
@@ -571,18 +591,18 @@ footer {
     <div class="standard-card">
       <h3>لغة الجسد</h3>
       <ul>
-        <li>الابتسامة عند استقبال المراجع</li>
-        <li>التواصل البصري باحترام</li>
         <li>الوقوف عند استقبال المراجع</li>
-        <li>تجنب الانشغال بالهاتف أو الأحاديث الجانبية</li>
+        <li>التواصل البصري باحترام</li>
+        <li>الابتسامة عند استقبال المراجع</li>
+        <li>تجنب الانشغال بالهاتف أو الأحاديث الجانبية بصوت عالي </li>
       </ul>
     </div>
     <div class="standard-card">
       <h3>المظهر العام</h3>
       <ul>
-        <li>الالتزام بالزي الرسمي المعتمد</li>
+        <li>الالتزام بارتداء البطاقة الوظيفية التعريفية</li>
         <li>المحافظة على النظافة الشخصية</li>
-        <li>ارتداء بطاقة الاسم</li>
+        <li>الالتزام بالزي الرسمي المعتمد</li>
       </ul>
     </div>
     <div class="standard-card">
@@ -591,7 +611,7 @@ footer {
         <li>احترام جميع المراجعين</li>
         <li>الحفاظ على سرية المعلومات</li>
         <li>عدم مناقشة الأمور الطبية أمام المراجعين</li>
-        <li>الالتزام بسياسات العيادة</li>
+        <li>الالتزام بالسياسات الداخلية للعيادة</li>
       </ul>
     </div>
   </div>
@@ -722,9 +742,9 @@ footer {
   <table>
     <thead><tr><th>النوع</th><th>الإجمالي</th><th>الدفعة الأولى</th><th>الدفعة عند المقاسات</th><th>القسط الشهري</th></tr></thead>
     <tbody>
-      <tr><td>INVISALIGN LITE</td><td>11,000 ريال</td><td>2,500 ريال</td><td>2,500 ريال</td><td>800 – 1,000 ريال</td></tr>
-      <tr><td>INVISALIGN MODERATE</td><td>14,000 ريال</td><td>2,500 ريال</td><td>2,500 ريال</td><td>800 – 1,000 ريال</td></tr>
-      <tr><td>INVISALIGN FULL</td><td>16,000 ريال</td><td>2,500 ريال</td><td>2,500 ريال</td><td>800 – 1,000 ريال</td></tr>
+      <tr><td>INVISALIGN LITE</td><td>11,000 ريال</td><td>2,500 ريال</td><td>1,000 ريال</td><td>800 – 1,000 ريال</td></tr>
+      <tr><td>INVISALIGN MODERATE</td><td>14,000 ريال</td><td>1,000 ريال</td><td>2,500 ريال</td><td>800 – 1,000 ريال</td></tr>
+      <tr><td>INVISALIGN FULL</td><td>16,000 ريال</td><td>2,500 ريال</td><td>1,000 ريال</td><td>800 – 1,000 ريال</td></tr>
     </tbody>
   </table>
   </div>
@@ -971,7 +991,7 @@ footer {
   <div class="sub-heading">أسئلة التشخيص الأولي (Triage)</div>
   <ul>
     <li>ما الشكلة الأساسية؟ نكتب الإجراء الذي يحتاجه على الموعد (بوتوكس / فلر).</li>
-    <li>نعطي المراجعة أقرب موعد متاح مع الدكتورة (لا نذكر اسم الدكتورة، فقط التاريخ المتاح).</li>
+    <li>نعطي المراجعة أقرب موعد متاح مع الدكتورة (لا نذكر اسم الدكتورة،  التاريخ المتاح).</li>
   </ul>
 
   <div class="sub-heading">إجابات التجميل – البوتوكس والفلر</div>
@@ -1145,7 +1165,36 @@ document.querySelectorAll('#sidebar nav a').forEach(function(link) {
     }
   });
 });
+
+// Active link highlight on scroll
+(function() {
+  var links = document.querySelectorAll('#sidebar nav a[href^="#"]');
+  var sections = [];
+  links.forEach(function(l) {
+    var id = l.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) sections.push({ el: el, link: l });
+  });
+
+  function onScroll() {
+    var scrollY = window.scrollY + 100;
+    var current = sections[0];
+    sections.forEach(function(s) {
+      if (s.el.offsetTop <= scrollY) current = s;
+    });
+    links.forEach(function(l) { l.classList.remove('active'); });
+    if (current) current.link.classList.add('active');
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
 </script>
 
 </body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
 </html>

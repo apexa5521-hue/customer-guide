@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APEXCARE | دليل الأسعار</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f8fafc;
+    --surface2: #f1f5f9;
+    --text: #111827;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --primary: #22a6a1;
+    --primary-light: #d1f5f3;
+    --secondary: #7a5ea8;
+    --secondary-light: #ede9f6;
+    --accent: #f04a8a;
+    --accent-light: #fde8f1;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 16px rgba(34,166,161,0.15), 0 8px 24px rgba(0,0,0,0.08);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  [data-theme="dark"] {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #252836;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --border: #2d3148;
+    --primary: #2dd4bf;
+    --primary-light: #0f2d2b;
+    --secondary: #a78bfa;
+    --secondary-light: #1e1535;
+    --accent: #f472b6;
+    --accent-light: #2d1022;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.2);
+    --card-shadow-hover: 0 4px 16px rgba(45,212,191,0.2), 0 8px 24px rgba(0,0,0,0.3);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', 'Tahoma', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ===== HEADER ===== */
+  .site-header {
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+  }
+  .header-brand { display: flex; align-items: center; gap: 14px; }
+  .header-logo { height: 44px; width: auto; object-fit: contain; }
+  .header-logo-fallback {
+    height: 44px; width: 120px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 800; font-size: 13px; letter-spacing: 1px;
+  }
+  .header-info h1 { font-size: 16px; font-weight: 700; color: var(--text); }
+  .header-info p { font-size: 12px; color: var(--muted); margin-top: 1px; }
+  .header-actions { display: flex; align-items: center; gap: 10px; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;
+    font-size: 13px; font-weight: 600; transition: all 0.2s; text-decoration: none;
+    font-family: inherit;
+  }
+  .btn-primary { background: var(--primary); color: white; }
+  .btn-primary:hover { background: #1a8f8a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(34,166,161,0.3); }
+  .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { background: var(--border); }
+  .btn-icon { width: 38px; height: 38px; padding: 0; justify-content: center; border-radius: 50%; background: var(--surface2); border: 1px solid var(--border); font-size: 16px; color: var(--text); }
+  .btn-icon:hover { background: var(--border); }
+
+  /* ===== HERO FULLSCREEN ===== */
+  .hero {
+    min-height: calc(100vh - 69px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 60px 24px 48px;
+    position: relative; overflow: hidden;
+    background: var(--bg);
+  }
+  /* Animated mesh background */
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 15% 25%, rgba(34,166,161,0.10) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 85% 75%, rgba(122,94,168,0.09) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 50% 5%, rgba(240,74,138,0.07) 0%, transparent 60%);
+    animation: meshShift 8s ease-in-out infinite alternate;
+  }
+  @keyframes meshShift {
+    0% { opacity: 0.7; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.06); }
+  }
+  .hero::after {
+    content: '';
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      radial-gradient(circle at 5% 85%, rgba(34,166,161,0.05) 0%, transparent 35%),
+      radial-gradient(circle at 95% 15%, rgba(240,74,138,0.05) 0%, transparent 35%);
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 720px; width: 100%; }
+
+  /* Hero Logo */
+  .hero-logo-wrap {
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 32px;
+    animation: fadeDown 0.7s ease both;
+  }
+  .hero-logo-img {
+    width: auto; height: auto;
+    max-width: min(340px, 70vw);
+    max-height: 130px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 32px rgba(34,166,161,0.15));
+    transition: transform 0.4s ease, filter 0.4s ease;
+    cursor: pointer;
+    border-radius: 16px;
+  }
+  [data-theme="dark"] .hero-logo-img {
+    filter: drop-shadow(0 8px 32px rgba(45,212,191,0.2)) brightness(0.92);
+  }
+  .hero-logo-img:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 12px 40px rgba(34,166,161,0.25));
+  }
+
+  /* Divider */
+  .hero-divider {
+    width: 60px; height: 3px; margin: 0 auto 28px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    border-radius: 2px;
+    animation: fadeDown 0.7s 0.1s ease both;
+  }
+
+  /* Tagline */
+  .hero-tagline {
+    font-size: clamp(15px, 2.5vw, 20px); font-weight: 700;
+    color: var(--text); margin-bottom: 10px; letter-spacing: 0.5px;
+    animation: fadeDown 0.7s 0.15s ease both;
+  }
+  .hero-sub {
+    color: var(--muted); font-size: clamp(13px, 1.8vw, 15px); margin-bottom: 36px;
+    line-height: 1.7; animation: fadeDown 0.7s 0.2s ease both;
+  }
+
+  @keyframes fadeDown { from { opacity:0; transform:translateY(-18px); } to { opacity:1; transform:translateY(0); } }
+  .hero-actions {
+    display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;
+    animation: fadeDown 0.7s 0.3s ease both;
+  }
+  .btn-primary-hero {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 15px 36px; border-radius: 14px; border: none; cursor: pointer;
+    font-size: 15px; font-weight: 700; transition: all 0.25s; text-decoration: none;
+    font-family: inherit;
+    background: linear-gradient(135deg, var(--primary), #1a8f8a);
+    color: white; box-shadow: 0 4px 24px rgba(34,166,161,0.35);
+    letter-spacing: 0.3px;
+  }
+  .btn-primary-hero:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(34,166,161,0.45); }
+  .stats-bar {
+    display: flex; justify-content: center; gap: 0;
+    margin-top: 52px; border-top: 1px solid var(--border);
+    padding-top: 36px; flex-wrap: wrap; width: 100%;
+    animation: fadeDown 0.7s 0.4s ease both;
+  }
+  .stat {
+    text-align: center; padding: 0 32px; position: relative;
+    flex: 1; min-width: 110px;
+  }
+  .stat:not(:last-child)::after {
+    content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 1px; height: 40px; background: var(--border);
+  }
+  .stat-num {
+    font-size: 32px; font-weight: 900; color: var(--primary);
+    display: block; line-height: 1;
+  }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 6px; display: block; font-weight: 500; }
+  /* Floating particles */
+  .hero-particles { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .particle {
+    position: absolute; border-radius: 50%;
+    animation: float linear infinite;
+    opacity: 0.35;
+  }
+  @keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.35; }
+    90% { opacity: 0.35; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+  }
+
+  /* ===== OVERLAY ===== */
+  .overlay {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.6); backdrop-filter: blur(6px);
+    animation: fadeIn 0.2s ease;
+  }
+  .overlay.active { display: flex; align-items: flex-start; justify-content: center; padding: 16px; overflow-y: auto; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .modal {
+    background: var(--bg); border-radius: 16px;
+    width: 100%; max-width: 1300px;
+    min-height: calc(100vh - 32px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    animation: slideUp 0.25s ease; margin: auto;
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  .modal-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 24px; border-bottom: 1px solid var(--border);
+    background: var(--surface); flex-shrink: 0;
+  }
+  .modal-title { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .modal-close { background: none; border: none; font-size: 20px; cursor: pointer; color: var(--muted); line-height: 1; padding: 6px 10px; border-radius: 8px; transition: all 0.2s; }
+  .modal-close:hover { background: var(--border); color: var(--text); }
+  .modal-body { padding: 0; flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+  /* ===== ADMIN MODAL ===== */
+  .admin-overlay {
+    display: none; position: fixed; inset: 0; z-index: 2000;
+    background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
+    align-items: center; justify-content: center;
+  }
+  .admin-overlay.active { display: flex; }
+  .admin-modal {
+    background: var(--bg); border-radius: 20px;
+    width: 100%; max-width: 400px;
+    padding: 40px 36px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.3);
+    animation: slideUp 0.25s ease;
+    border: 1px solid var(--border);
+    text-align: center; position: relative;
+  }
+  .admin-icon {
+    width: 64px; height: 64px; margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    border-radius: 16px; display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+  }
+  .admin-modal h3 { font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+  .admin-modal p { color: var(--muted); font-size: 13px; margin-bottom: 28px; }
+  .admin-input-wrap { position: relative; margin-bottom: 16px; }
+  .admin-input {
+    width: 100%; padding: 12px 44px 12px 16px;
+    border: 1.5px solid var(--border); border-radius: 10px;
+    background: var(--surface); color: var(--text);
+    font-size: 15px; font-family: inherit; outline: none;
+    text-align: center; letter-spacing: 4px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .admin-input:focus { border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(122,94,168,0.1); }
+  .admin-input.error { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(240,74,138,0.1); animation: shake 0.3s ease; }
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+  }
+  .toggle-pw {
+    position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; cursor: pointer; color: var(--muted); font-size: 16px;
+  }
+  .admin-btn {
+    width: 100%; padding: 12px; background: linear-gradient(135deg, var(--secondary), #6348a0);
+    color: white; border: none; border-radius: 10px;
+    font-size: 15px; font-weight: 700; cursor: pointer; font-family: inherit;
+    transition: all 0.2s; margin-bottom: 12px;
+  }
+  .admin-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(122,94,168,0.35); }
+  .admin-cancel { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 13px; font-family: inherit; }
+  .admin-cancel:hover { color: var(--text); }
+  .admin-error { color: var(--accent); font-size: 12px; margin-top: -8px; margin-bottom: 12px; display: none; }
+  .admin-error.show { display: block; }
+  /* Secret trigger - invisible click zone in header */
+  .secret-trigger {
+    position: absolute; bottom: 4px; left: 4px;
+    width: 20px; height: 20px; cursor: default;
+    user-select: none; opacity: 0;
+  }
+
+  /* ===== STICKY CONTROLS ===== */
+  .sticky-controls {
+    position: sticky; top: 0; z-index: 90;
+    background: var(--bg); border-bottom: 1px solid var(--border);
+    padding: 12px 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    flex-shrink: 0;
+  }
+
+  /* ===== TABS ===== */
+  .tabs { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    display: flex; align-items: center; gap: 6px;
+    padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;
+    font-size: 13px; font-weight: 600; white-space: nowrap;
+    background: transparent; color: var(--muted); transition: all 0.2s;
+    font-family: inherit;
+  }
+  .tab:hover { background: var(--surface2); color: var(--text); }
+  .tab.active { background: var(--primary); color: white; }
+  .tab.fav.active { background: #f59e0b; }
+  .tab-count {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 20px; height: 20px; border-radius: 100px; padding: 0 5px;
+    font-size: 11px; font-weight: 700;
+    background: rgba(255,255,255,0.25); color: inherit;
+  }
+  .tab:not(.active) .tab-count { background: var(--border); color: var(--muted); }
+
+  /* ===== FILTER BAR ===== */
+  .filter-bar { display: flex; gap: 10px; margin-top: 10px; align-items: center; flex-wrap: wrap; }
+  .search-wrap { position: relative; flex: 1; min-width: 200px; }
+  .search-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 14px; }
+  .search-input {
+    width: 100%; padding: 9px 36px 9px 36px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--text); font-size: 13px; font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none; direction: rtl;
+  }
+  .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(34,166,161,0.1); }
+  .search-clear { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--muted); cursor: pointer; font-size: 16px; display: none; }
+  .search-clear.visible { display: block; }
+
+  .autocomplete-list {
+    position: absolute; top: calc(100% + 4px); right: 0; left: 0;
+    background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+    box-shadow: var(--card-shadow); z-index: 200; display: none; max-height: 200px; overflow-y: auto;
+  }
+  .autocomplete-list.show { display: block; }
+  .ac-item { padding: 8px 14px; cursor: pointer; font-size: 13px; }
+  .ac-item:hover { background: var(--surface2); }
+  .ac-item mark { background: rgba(34,166,161,0.2); color: var(--primary); border-radius: 2px; font-style: normal; }
+
+  .filter-select {
+    padding: 9px 14px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text); font-size: 13px;
+    font-family: inherit; cursor: pointer; outline: none; min-width: 140px; direction: rtl;
+  }
+  .filter-select:focus { border-color: var(--primary); }
+  .btn-reset { white-space: nowrap; color: var(--accent); background: var(--accent-light); border: none; padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
+  .btn-reset:hover { opacity: 0.85; }
+
+  /* ===== RESULTS INFO ===== */
+  .results-info { padding: 12px 24px; font-size: 13px; color: var(--muted); display: flex; align-items: center; justify-content: space-between; }
+
+  /* ===== GRID ===== */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px; padding: 0 24px 24px;
+  }
+
+  /* ===== CARD ===== */
+  .service-card {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.25s; position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; right: 0; width: 4px; height: 100%;
+    background: var(--primary); opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .service-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); border-color: var(--primary); }
+  .service-card:hover::before { opacity: 1; }
+
+  .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+  .card-name { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; flex: 1; }
+  .card-name mark { background: rgba(240,74,138,0.15); color: var(--accent); border-radius: 2px; }
+  .fav-btn { background: none; border: none; cursor: pointer; font-size: 18px; color: var(--muted); transition: transform 0.2s, color 0.2s; flex-shrink: 0; padding: 2px; }
+  .fav-btn.active { color: #f59e0b; }
+  .fav-btn:hover { transform: scale(1.2); }
+
+  .card-section-badge {
+    display: inline-flex; align-items: center;
+    padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; margin-bottom: 10px;
+  }
+  .card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+  .card-price { font-size: 18px; font-weight: 800; color: var(--primary); }
+  .card-price span { font-size: 11px; font-weight: 500; color: var(--muted); }
+  .card-code-wrap { display: flex; align-items: center; gap: 6px; }
+  .card-code { font-size: 12px; color: var(--muted); background: var(--surface2); padding: 3px 8px; border-radius: 6px; font-family: monospace; }
+  .copy-btn {
+    background: var(--surface2); border: 1px solid var(--border); border-radius: 6px;
+    cursor: pointer; padding: 4px 8px; font-size: 12px; color: var(--muted);
+    transition: all 0.2s; display: flex; align-items: center; gap: 4px; font-family: inherit;
+  }
+  .copy-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+  .copy-btn.copied { background: #10b981; color: white; border-color: #10b981; }
+
+  /* Section colors */
+  .badge-examination { background: #e0f2fe; color: #0277bd; }
+  .badge-conservative { background: #e8f5e9; color: #2e7d32; }
+  .badge-endodontics { background: #fff3e0; color: #e65100; }
+  .badge-prosthetics { background: #f3e5f5; color: #6a1b9a; }
+  .badge-surgery { background: #fce4ec; color: #c62828; }
+  .badge-orthodontics { background: #e3f2fd; color: #1565c0; }
+  .badge-periodontics { background: #e8eaf6; color: #283593; }
+  .badge-pediatric { background: #fff8e1; color: #f57f17; }
+  .badge-dermatology { background: #fce4ec; color: #ad1457; }
+  .badge-laser { background: #e0f7fa; color: #00695c; }
+  [data-theme="dark"] .badge-examination { background: #0c2f42; color: #7ec8f0; }
+  [data-theme="dark"] .badge-conservative { background: #0c2f1a; color: #81c784; }
+  [data-theme="dark"] .badge-endodontics { background: #2f1a08; color: #ffb74d; }
+  [data-theme="dark"] .badge-prosthetics { background: #1e0f2f; color: #ce93d8; }
+  [data-theme="dark"] .badge-surgery { background: #2f0c14; color: #f48fb1; }
+  [data-theme="dark"] .badge-orthodontics { background: #0c1e2f; color: #90caf9; }
+  [data-theme="dark"] .badge-periodontics { background: #0c0e2f; color: #9fa8da; }
+  [data-theme="dark"] .badge-pediatric { background: #2f240c; color: #fff176; }
+  [data-theme="dark"] .badge-dermatology { background: #2f0c1f; color: #f48fb1; }
+  [data-theme="dark"] .badge-laser { background: #0c2526; color: #80cbc4; }
+
+  /* ===== EMPTY STATE ===== */
+  .empty-state { text-align: center; padding: 60px 24px; color: var(--muted); }
+  .empty-state .icon { font-size: 48px; margin-bottom: 16px; }
+  .empty-state h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+
+  /* ===== TOAST ===== */
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px);
+    background: #111; color: white; padding: 10px 20px; border-radius: 100px;
+    font-size: 13px; font-weight: 600; z-index: 9999;
+    transition: transform 0.3s ease; pointer-events: none; white-space: nowrap;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ===== SCROLLBAR ===== */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+  @media (max-width: 600px) {
+    .site-header { padding: 12px 16px; }
+    .hero { padding: 32px 16px; }
+    .sticky-controls { padding: 10px 16px; }
+    .cards-grid { padding: 0 12px 16px; grid-template-columns: 1fr; }
+    .results-info { padding: 10px 16px; }
+    .stats-bar { gap: 0; }
+    .stat { padding: 0 16px; min-width: 80px; }
+    .hero h2 { font-size: 26px; }
+    .stat-num { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Site Header -->
+<header class="site-header">
+  <div class="header-brand">
+    <img src="data:image/jpeg;base64,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2maHyW1IamNCZhoYgOxmFhsrVzhThMEVkHFOdBayQwwk81+LvVobgLcaUrESdGy3g45WRRuS71ensCWqwFfBSI7IhklIkmRQJRB1xJPO9Y61DCSqkVLAheMmQZLzUgZz7W4EiePNC9BNxGwACBG3+XYzsinO6wzQb1mlZEjPBe82xTEQgxcTmEWBuUfQhc2QJDz0ySodCRrKhT3afq1Y5Vl9qGLCBW13k+5oUjAWYxJm5kvrUgIylM7AA4OmRuRKGsFDoozgBp0l4he9SAtSzaM0Z0pba3KrdR4HpklfdC3zIcEUNjBZilBXJ2UElkWxhnqOSp22eYaywDqTFKiBAbgwXQUTEFx12JIIsGOmSxPLg5yK+X/fX//ZICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=" alt="APEXCARE Logo" class="header-logo" id="headerLogo">
+    <div class="header-info">
+      <h1>APEXCARE | دليل الأسعار</h1>
+      <p>أسنان • جلدية • ليزر</p>
+    </div>
+  </div>
+  <div class="header-actions">
+    <button class="btn btn-icon" id="themeToggle" title="تبديل الثيم">🌙</button>
+  </div>
+</header>
+
+<!-- Hero Section - Fullscreen -->
+<section class="hero" id="hero">
+  <!-- Particles -->
+  <div class="hero-particles" id="particles"></div>
+
+  <div class="hero-content">
+    <div class="hero-logo-wrap">
+      <img src="data:image/jpeg;base64,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2maHyW1IamNCZhoYgOxmFhsrVzhThMEVkHFOdBayQwwk81+LvVobgLcaUrESdGy3g45WRRuS71ensCWqwFfBSI7IhklIkmRQJRB1xJPO9Y61DCSqkVLAheMmQZLzUgZz7W4EiePNC9BNxGwACBG3+XYzsinO6wzQb1mlZEjPBe82xTEQgxcTmEWBuUfQhc2QJDz0ySodCRrKhT3afq1Y5Vl9qGLCBW13k+5oUjAWYxJm5kvrUgIylM7AA4OmRuRKGsFDoozgBp0l4he9SAtSzaM0Z0pba3KrdR4HpklfdC3zIcEUNjBZilBXJ2UElkWxhnqOSp22eYaywDqTFKiBAbgwXQUTEFx12JIIsGOmSxPLg5yK+X/fX//ZICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=" alt="APEXCARE Logo" class="hero-logo-img" id="heroLogoImg">
+    </div>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">تخصصات الأسنان • خدمات الجلدية • إجراءات الليزر</p>
+    <p class="hero-sub">دليل الأسعار الشامل — أكثر من 400 خدمة طبية متكاملة</p>
+    <div class="hero-actions">
+      <button class="btn-primary-hero" id="openModalBtn">📋 فتح دليل الأسعار</button>
+    </div>
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-num" id="statDental">-</span>
+        <span class="stat-label">خدمة أسنان</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" id="statDerm">-</span>
+        <span class="stat-label">خدمة جلدية</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" id="statLaser">-</span>
+        <span class="stat-label">خدمة ليزر</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" id="statTotal">-</span>
+        <span class="stat-label">إجمالي الخدمات</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secret trigger — triple-click on logo triggers admin panel -->
+  <span class="secret-trigger" id="secretTrigger" title=""></span>
+</section>
+
+<!-- Admin Login Modal -->
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-modal">
+    <div class="admin-icon">🔐</div>
+    <h3>دخول الإدارة</h3>
+    <p>أدخل كلمة المرور للوصول إلى لوحة الإدارة</p>
+    <div class="admin-input-wrap">
+      <input type="password" class="admin-input" id="adminInput" placeholder="••••••••" autocomplete="off" maxlength="20">
+      <button class="toggle-pw" id="togglePw" type="button">👁</button>
+    </div>
+    <p class="admin-error" id="adminError">❌ كلمة المرور غير صحيحة</p>
+    <button class="admin-btn" id="adminLoginBtn">دخول</button>
+    <button class="admin-cancel" id="adminCancelBtn">إلغاء</button>
+  </div>
+</div>
+
+<!-- Overlay / Modal -->
+<div class="overlay" id="overlay">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="modal-title">📋 دليل الأسعار — عيادات أبكس كير</div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button id="adminDownloadBtn" style="display:none;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;border:none;cursor:pointer;font-size:12px;font-weight:700;background:linear-gradient(135deg,var(--secondary),#6348a0);color:white;font-family:inherit;transition:all 0.2s" title="تنزيل JSON — إدارة فقط">⬇️ JSON</button>
+        <button class="modal-close" id="closeModal">✕</button>
+      </div>
+    </div>
+    <div class="modal-body" style="padding:0;overflow-y:auto;flex:1">
+
+      <!-- Sticky Controls -->
+      <div class="sticky-controls" id="stickyControls">
+        <div class="tabs" id="tabs">
+          <button class="tab active" data-tab="Dental">🦷 تخصصات الأسنان <span class="tab-count" id="cnt-Dental">0</span></button>
+          <button class="tab" data-tab="Dermatology">💉 خدمات الجلدية <span class="tab-count" id="cnt-Dermatology">0</span></button>
+          <button class="tab" data-tab="Laser">✨ الليزر <span class="tab-count" id="cnt-Laser">0</span></button>
+          <button class="tab fav" data-tab="Favorites">⭐ المفضلة <span class="tab-count" id="cnt-Favorites">0</span></button>
+        </div>
+        <div class="filter-bar">
+          <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" id="searchInput" placeholder="ابحث عن خدمة أو كود...">
+            <button class="search-clear" id="searchClear">✕</button>
+            <div class="autocomplete-list" id="autocomplete"></div>
+          </div>
+          <select class="filter-select" id="sectionFilter"><option value="">جميع الأقسام</option></select>
+          <button class="btn-reset" id="resetFilters">↺ إعادة ضبط</button>
+        </div>
+      </div>
+
+      <!-- Results Info -->
+      <div class="results-info">
+        <span id="resultsCount">جميع الخدمات</span>
+        <span id="activeFiltersInfo" style="color:var(--accent);font-weight:600;display:none"></span>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="cards-grid" id="cardsGrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">✅ تم النسخ</div>
+
+<script>
+// ============================================================
+// DATA — Real data from APEXCARE price list PDF
+// ============================================================
+const SERVICES = [
+  // === DENTAL - الكشف والاشعة ===
+  {code:"A1",serviceName:"كشف طبيب عام",priceSAR:30,department:"Dental",section:"الكشف والاشعة"},
+  {code:"A2",serviceName:"كشف طبيب أخصائي / استشاري",priceSAR:150,department:"Dental",section:"الكشف والاشعة"},
+  {code:"A3",serviceName:"اشعة ذروية أو مجنح",priceSAR:30,department:"Dental",section:"الكشف والاشعة"},
+  {code:"A4",serviceName:"اشعة اطباقي",priceSAR:30,department:"Dental",section:"الكشف والاشعة"},
+  {code:"A5",serviceName:"اشعة سيفالوماتري للتقويم",priceSAR:300,department:"Dental",section:"الكشف والاشعة"},
+  {code:"A6",serviceName:"اشعة مقطعية ثلاثية الابعاد CBCT",priceSAR:500,department:"Dental",section:"الكشف والاشعة"},
+  {code:"A7",serviceName:"اشعة بانوراما",priceSAR:200,department:"Dental",section:"الكشف والاشعة"},
+  // === DENTAL - العلاج التحفظي ===
+  {code:"R1",serviceName:"تنظيف وتلميع الاسنان بدون رواسب جيرية",priceSAR:200,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R2",serviceName:"تنظيف وتلميع الاسنان مع رواسب جيرية",priceSAR:400,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R3",serviceName:"تنظيف الأسنان واللثة",priceSAR:600,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R4",serviceName:"تبييض السن الواحد كيميائيا",priceSAR:200,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R5",serviceName:"تبييض الاسنان منزلي",priceSAR:850,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R6",serviceName:"ازالة تصبغات اللثة بالليزر للفك الواحد",priceSAR:1500,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R7",serviceName:"قوالب التبييض المنزلي بدون جل",priceSAR:300,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R8",serviceName:"جلسة تبييض للأسنان بالبلازما أو الليزر",priceSAR:1100,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R9",serviceName:"أي كون تبييض",priceSAR:1600,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R10",serviceName:"بناء تاج بحشوة تجميلية",priceSAR:600,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R11",serviceName:"حشوة تجميلية سطحين",priceSAR:500,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R12",serviceName:"حشوة تجميلية سطح واحد",priceSAR:400,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R13",serviceName:"إعادة علاج عصب قناة واحدة أو قناتين",priceSAR:500,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R14",serviceName:"ضماد لحالة عصب عفنة للسن الواحد مع الأشعة",priceSAR:300,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R15",serviceName:"علاج عصب أربع قنوات بدون حشوة التاج",priceSAR:750,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R16",serviceName:"علاج عصب ثلاث قنوات بدون حشوة التاج",priceSAR:600,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R17",serviceName:"علاج عصب قناتين بدون حشوة التاج",priceSAR:450,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R18",serviceName:"علاج عصب قناة واحدة بدون حشوة التاج",priceSAR:400,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R19",serviceName:"بتر عصب الحجرة اللبية بدون حشوة التاج",priceSAR:350,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R20",serviceName:"فك تركيبة سابقة",priceSAR:350,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R21",serviceName:"إزالة تسوس",priceSAR:400,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R22",serviceName:"حشوة علاجية سطح واحد",priceSAR:200,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R23",serviceName:"حشوة رصاص (أملقم)",priceSAR:300,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R24",serviceName:"طلاء سن بالكمبوزت",priceSAR:300,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R25",serviceName:"حشوة علاجية لسطحين",priceSAR:300,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R26",serviceName:"ازالة وتد بسيط",priceSAR:300,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R27",serviceName:"ازالة وتد معقد",priceSAR:500,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R28",serviceName:"جهاز العضة الليلي",priceSAR:300,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R29",serviceName:"إعادة الصاق تاج",priceSAR:150,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R30",serviceName:"إعادة الصاق جسر 3 وحدات",priceSAR:200,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R31",serviceName:"كرستالة على السن الواحد",priceSAR:150,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R32",serviceName:"وتد",priceSAR:200,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R33",serviceName:"وتد فايبر",priceSAR:250,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R34",serviceName:"تاج زيركون بدون معدن",priceSAR:850,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R35",serviceName:"تاج بورسلين (انسيرام, امبرس, بروسيرا)",priceSAR:1600,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R36",serviceName:"تركيب سن اضافي",priceSAR:1000,department:"Dental",section:"العلاج التحفظي"},
+  {code:"R37",serviceName:"حشوة مؤقتة",priceSAR:150,department:"Dental",section:"العلاج التحفظي"},
+  // === DENTAL - علاج جذور الأسنان ===
+  {code:"E1",serviceName:"بتر عصب الحجرة اللبية مع الحشوة المؤقتة",priceSAR:900,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E2",serviceName:"علاج عصب لسن غير مكتمل النمو",priceSAR:950,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E3",serviceName:"حالة غير مكتملة الجذر (متعفنة)",priceSAR:950,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E4",serviceName:"حالة غير مكتملة الجذر (غير متعفنة)",priceSAR:750,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E5",serviceName:"إعادة علاج عصب",priceSAR:400,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E6",serviceName:"جراحة عصب",priceSAR:2000,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E7",serviceName:"قص ذروة سن إضافي",priceSAR:1000,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E8",serviceName:"علاج عصب السن الأمامي مع الحشوة المؤقتة",priceSAR:950,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E9",serviceName:"علاج عصب الضرس الخلفي مع الحشوة المؤقتة",priceSAR:1400,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E10",serviceName:"جراحة قص ذروة للجذر الواحد بعد إعادة علاج العصب",priceSAR:1500,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E11",serviceName:"جراحة قص ذروة السن",priceSAR:2500,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E12",serviceName:"إعادة علاج عصب السن الأمامي",priceSAR:1250,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E13",serviceName:"إعادة علاج عصب الضرس الخلفي",priceSAR:1700,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E14",serviceName:"حالة علاج عصب معقدة مع الحشوة المؤقتة",priceSAR:2400,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E15",serviceName:"إزالة أو تعدي مبرد مكسور في قنوات الجذور",priceSAR:200,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E16",serviceName:"استخدام بايوسيراميك سيلر للقناة الواحدة",priceSAR:200,department:"Dental",section:"علاج جذور الأسنان"},
+  {code:"E17",serviceName:"جراحة قص ذروة السن (متقدمة)",priceSAR:2500,department:"Dental",section:"علاج جذور الأسنان"},
+  // === DENTAL - التركيبات ===
+  {code:"P1",serviceName:"تركيب سن إضافي",priceSAR:1500,department:"Dental",section:"التركيبات"},
+  {code:"P2",serviceName:"تركيب سن اضافي لمجموعة اسنان",priceSAR:1000,department:"Dental",section:"التركيبات"},
+  {code:"P3",serviceName:"اصلاح طقم مكسور",priceSAR:300,department:"Dental",section:"التركيبات"},
+  {code:"P4",serviceName:"تبطين طقم بأكريلك حار",priceSAR:300,department:"Dental",section:"التركيبات"},
+  {code:"P5",serviceName:"تبطين طقم بأكريلك بارد",priceSAR:250,department:"Dental",section:"التركيبات"},
+  {code:"P6",serviceName:"تركيبة جزئية",priceSAR:1500,department:"Dental",section:"التركيبات"},
+  {code:"P7",serviceName:"تركيبة على زرعتين - الشق التركيبي فقط",priceSAR:10000,department:"Dental",section:"التركيبات"},
+  {code:"P8",serviceName:"تركيبة على 4 زرعات - الشق التركيبي فقط",priceSAR:15000,department:"Dental",section:"التركيبات"},
+  {code:"P9",serviceName:"تركيبة على 6 زرعات - الشق التركيبي فقط",priceSAR:25000,department:"Dental",section:"التركيبات"},
+  {code:"P10",serviceName:"تركيبة على 8 زرعات - الشق التركيبي فقط",priceSAR:35000,department:"Dental",section:"التركيبات"},
+  {code:"P11",serviceName:"طقم جزئي أكريلك مع أسنان أكريلك",priceSAR:3000,department:"Dental",section:"التركيبات"},
+  {code:"P12",serviceName:"طقم كامل أكريلك للفك الواحد",priceSAR:5000,department:"Dental",section:"التركيبات"},
+  {code:"P13",serviceName:"إعادة عدسة واحدة",priceSAR:2800,department:"Dental",section:"التركيبات"},
+  {code:"P14",serviceName:"إعادة تلبيسة واحدة",priceSAR:3000,department:"Dental",section:"التركيبات"},
+  {code:"P15",serviceName:"حشوة بورسلان مسبقة الصنع",priceSAR:1000,department:"Dental",section:"التركيبات"},
+  {code:"P16",serviceName:"تركيبة مؤقتة للفينير",priceSAR:200,department:"Dental",section:"التركيبات"},
+  {code:"P17",serviceName:"وحدة لومينير",priceSAR:2500,department:"Dental",section:"التركيبات"},
+  {code:"P18",serviceName:"وحدة فينير",priceSAR:2500,department:"Dental",section:"التركيبات"},
+  {code:"P19",serviceName:"تاج أكريلك جاهز الصنع مؤقت",priceSAR:200,department:"Dental",section:"التركيبات"},
+  {code:"P20",serviceName:"تاج ليثيوم دي سيليكيت خلفي",priceSAR:2500,department:"Dental",section:"التركيبات"},
+  {code:"P21",serviceName:"تاج ليثيوم دي سيليكيت أمامي",priceSAR:2500,department:"Dental",section:"التركيبات"},
+  // === DENTAL - الجراحة وزراعة الأسنان ===
+  {code:"s1",serviceName:"خلع وعملية زراعة واحدة مع التركيب النهائي",priceSAR:6000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s2",serviceName:"عملية زراعة زرعة مؤقتة",priceSAR:1000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s3",serviceName:"عملية زراعة فورية",priceSAR:7000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s4",serviceName:"عملية تطعيم عظمي منفصلة",priceSAR:4000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s5",serviceName:"عمل شريحة نسيجية ذاتية لتطعيم اللثة",priceSAR:3000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s6",serviceName:"عملية زراعة مكان سن أمامي",priceSAR:7500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s7",serviceName:"عملية زراعة زرعة قصيرة مع التركيب النهائي",priceSAR:6500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s8",serviceName:"عملية زراعة واحدة مع التركيب النهائي",priceSAR:6000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s9",serviceName:"عملية زراعة واحدة",priceSAR:5500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s10",serviceName:"الزراعة بالشرايح مع التركيب النهائي للفك الواحد",priceSAR:70000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s11",serviceName:"تعويض فك كامل بثماني غرسات مع التركيب النهائي",priceSAR:55000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s12",serviceName:"تعويض فك كامل بستة غرسات مع التركيب النهائي",priceSAR:45000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s13",serviceName:"تعويض فك كامل بأربعة غرسات مع التركيب النهائي",priceSAR:35000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s14",serviceName:"تعويض فك كامل بغرستين مع التركيب النهائي",priceSAR:25000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s15",serviceName:"رفع جيب فكي خارجي",priceSAR:6000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s16",serviceName:"رفع جيب فكي داخلي",priceSAR:1500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s17",serviceName:"استعمال الغشاء الكولاجيني المصنع",priceSAR:1000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s18",serviceName:"استعمال الطعم العظمي المصنع",priceSAR:1000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s19",serviceName:"تركيبة زرعة واحدة (الشق التركيبي فقط)",priceSAR:3000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s20",serviceName:"عملية زراعة واحدة - الشق الجراحي فقط",priceSAR:3000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s21",serviceName:"إزالة غرسة سن جراحيا",priceSAR:1500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s22",serviceName:"إزالة شريحة معدنية تحت التخدير الموضعي",priceSAR:3000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s23",serviceName:"خلع ضرس",priceSAR:500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s24",serviceName:"الجراحة التقويمية للفك الواحد",priceSAR:45000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s25",serviceName:"عملية عينة أنسجة من الفم أو الوجه",priceSAR:1000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s26",serviceName:"عملية استخراج حصوات الغدد اللعابية",priceSAR:7000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s27",serviceName:"عملية توسيع فك تحت التخدير الكامل",priceSAR:12000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s28",serviceName:"غشاء ألوديرم",priceSAR:5000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s29",serviceName:"عملية إزالة الغدة اللعابية الفكية",priceSAR:20000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s30",serviceName:"عملية إزالة الغدة اللعابية النكافية",priceSAR:25000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s31",serviceName:"عملية شد ورفع الشفة العلوية",priceSAR:5000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s32",serviceName:"قص اللثة تجميلي للفك الواحد",priceSAR:5000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s33",serviceName:"توريد اللثة للفك الواحد",priceSAR:1500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s34",serviceName:"تعديل ندبات الوجه جراحيا تحت تخدير موضعي",priceSAR:4000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s35",serviceName:"التطعيم العظمي لشق الحنك",priceSAR:15000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s36",serviceName:"إغلاق شق سقف الحنك",priceSAR:15000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s37",serviceName:"إغلاق الشفة الأرنبية",priceSAR:12000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s38",serviceName:"شفط دهون الرقبة واللغلوغ",priceSAR:12000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s39",serviceName:"شد الوجه بالخيوط (للخيط الواحد)",priceSAR:1500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s40",serviceName:"حقن فيلر التجاعيد الابتسامة للجهة الواحدة 1مل",priceSAR:1500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s41",serviceName:"حقن فيلر 1مل",priceSAR:1500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s42",serviceName:"حقن البوتكس التجميلي لمنطقة واحدة فقط",priceSAR:1500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s43",serviceName:"حقن البوتكس لعلاج آلام عضلات الوجه للجهة الواحدة",priceSAR:3500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s44",serviceName:"الجراحة التقويمية للفك الواحد (متقدمة)",priceSAR:30000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s45",serviceName:"الجراحة التقويمية للفكين",priceSAR:60000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s46",serviceName:"عملية غسيل المفصل الصدغي للجهة الواحدة",priceSAR:12000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s47",serviceName:"عملية إزالة جسم غريب من الجيوب الأنفية",priceSAR:3000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s48",serviceName:"عملية إزالة تكتل ورمي في الفم أو الوجه",priceSAR:4000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s49",serviceName:"قص لثة تجميلي للسن الواحد",priceSAR:500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s50",serviceName:"إعادة تموضع الشفة",priceSAR:4000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s51",serviceName:"تقديم الذقن الجراحي تحت التخدير العام",priceSAR:16000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s52",serviceName:"سيليكون تقديم الذقن تحت التخدير الموضعي",priceSAR:8000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s53",serviceName:"سيليكون الوجنات",priceSAR:18000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s54",serviceName:"سيليكون تحديد الفك - عظام الفك الجانبية",priceSAR:18000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s55",serviceName:"إزالة دهون الخد للجهتين",priceSAR:6000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s56",serviceName:"غمازة خد للجهتين",priceSAR:5000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s57",serviceName:"غمازة خد للجهة الواحدة",priceSAR:3000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s58",serviceName:"خلع ضرس (عام)",priceSAR:300,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s59",serviceName:"إطالة تاج السن جراحيا",priceSAR:500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s60",serviceName:"تجريف الجيب اللثوي جراحيا للسن الواحد",priceSAR:150,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s61",serviceName:"تجريف الجيب اللثوي يدويا بدون جراحة للسن الواحد",priceSAR:100,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s62",serviceName:"استعمال الليزر بالعلاج",priceSAR:500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s63",serviceName:"عملية ترميم عظمي منفصلة",priceSAR:10000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s64",serviceName:"التخدير العام",priceSAR:5000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s65",serviceName:"علاج مشاكل المفصل عن طريق الليزر للجلسة الواحدة",priceSAR:300,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s66",serviceName:"علاج مشاكل المفصل عن طريق القوالب للفك الواحد",priceSAR:1300,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s67",serviceName:"عملية إزالة كيس منتشر",priceSAR:1800,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s68",serviceName:"عملية إزالة كيس في الفك تحت تخدير موضعي",priceSAR:2500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s69",serviceName:"فتح وتنظيف خراج خارج الفم تحت التخدير الموضعي",priceSAR:2000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s70",serviceName:"فتح وتنظيف خراج داخل الفم",priceSAR:1000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s71",serviceName:"عملية تحرير لجام اللسان المربوط",priceSAR:1500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s72",serviceName:"عملية تحرير لجام الشفة المربوط",priceSAR:1000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s73",serviceName:"عملية إزالة لحمية ضرس العقل",priceSAR:300,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s74",serviceName:"عملية كشف ناب مطمور لتركيب التقويم",priceSAR:800,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s75",serviceName:"عملية كشف ناب مطمور مغطى بالعظم",priceSAR:1500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s76",serviceName:"عملية قطع ذروة للجذر الواحد",priceSAR:1000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s77",serviceName:"عملية إزالة بروز عظمي",priceSAR:2000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s78",serviceName:"عملية شق وتوسيع العظم السنخي",priceSAR:4000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s79",serviceName:"عملية رفع جيب فكي خارجي",priceSAR:6000,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s80",serviceName:"عملية رفع جيب فكي داخلي",priceSAR:1500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s81",serviceName:"عملية إغلاق ناسور الجيب الفكي",priceSAR:1500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s82",serviceName:"إزالة غرسة واحدة",priceSAR:1500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s83",serviceName:"خلع جراحي لسن مطمور كليا",priceSAR:1500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s84",serviceName:"خلع جراحي لسن مطمور جزئيا",priceSAR:1200,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s85",serviceName:"خلع ضرس منهدم",priceSAR:400,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s86",serviceName:"عملية خلع ناب مطمور",priceSAR:1500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s87",serviceName:"خلع سن واحد بسيط",priceSAR:200,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s88",serviceName:"خلع جراحي لضرس",priceSAR:800,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s89",serviceName:"خلع جراحي لسن أو لجذر متهدم",priceSAR:900,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"s90",serviceName:"خلع ضرس معقد",priceSAR:600,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  {code:"S91",serviceName:"خلع وعملية زراعة واحدة مع التركيب النهائي",priceSAR:5500,department:"Dental",section:"الجراحة وزراعة الأسنان"},
+  // === DENTAL - تقويم الأسنان ===
+  {code:"O1",serviceName:"غرسة تقويمية",priceSAR:500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O2",serviceName:"تقويم جراحي",priceSAR:18000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O3",serviceName:"جهاز تقويمي متحرك للفكين",priceSAR:4000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O4",serviceName:"جهاز تقويمي متحرك (ماربي)",priceSAR:2500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O5",serviceName:"حالة تقويمية معقدة للفكين مع سحب ناب مطمور",priceSAR:18000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O6",serviceName:"حالة تقويمية معقدة للفك الواحد",priceSAR:7500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O7",serviceName:"حالة تقويمية متوسطة للفك الواحد",priceSAR:5500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O8",serviceName:"حالة تقويمية خفيفة للفك الواحد",priceSAR:4500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O9",serviceName:"حالة تقويمية معقدة للفكين",priceSAR:14000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O10",serviceName:"حالة تقويمية متوسطة للفكين",priceSAR:12500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O11",serviceName:"حالة تقويمية خفيفة للفكين",priceSAR:7500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O12",serviceName:"مثبت تقويم للفك الواحد",priceSAR:1000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O13",serviceName:"تقويم شفاف جراحي",priceSAR:24000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O14",serviceName:"تقويم شفاف لسن مطمور",priceSAR:22000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O15",serviceName:"جهاز توسيع للفك الواحد",priceSAR:2000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O16",serviceName:"حافظ مسافة",priceSAR:500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O17",serviceName:"زيارة شد تقويم",priceSAR:500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O18",serviceName:"فك التقويم مع التنظيف",priceSAR:1500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O19",serviceName:"دفعة أولى للتقويم المعدني",priceSAR:1500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O20",serviceName:"دفعة أولى للتقويم الشفاف",priceSAR:2000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O21",serviceName:"دفعة ثانية صور ومقاسات تقويم شفاف",priceSAR:2500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O22",serviceName:"مثبت فيفيرا للفكين",priceSAR:2700,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O23",serviceName:"مثبت فيفيرا للفك الواحد",priceSAR:1500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O24",serviceName:"تقويم شفاف معقد للفكين",priceSAR:18000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O25",serviceName:"تقويم شفاف كامل للفكين",priceSAR:16000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O26",serviceName:"تقويم شفاف متوسط للفكين",priceSAR:14000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O27",serviceName:"تقويم شفاف خفيف للفكين",priceSAR:12000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O28",serviceName:"تقويم شفاف متوسط للفك الواحد",priceSAR:8000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O29",serviceName:"تقويم شفاف بسيط للفك الواحد",priceSAR:5000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O30",serviceName:"تقويم شفاف اكسبريس للفكين",priceSAR:8000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O31",serviceName:"مثبت فاكيوم",priceSAR:500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O32",serviceName:"مثبت هاولي للفك الواحد",priceSAR:500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O33",serviceName:"مثبت داخلي للفك الواحد",priceSAR:500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O34",serviceName:"مثبت داخلي للفكين",priceSAR:1000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O35",serviceName:"تبديل حواصر مفقودة",priceSAR:100,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O36",serviceName:"سجلات وطبعات تقويمية",priceSAR:500,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O37",serviceName:"تركيب جهاز لقطع العادات السلوكية الخاطئة",priceSAR:1000,department:"Dental",section:"تقويم الأسنان"},
+  {code:"O38",serviceName:"تقويم معدني للفكين (حالة معقدة جداً)",priceSAR:20000,department:"Dental",section:"تقويم الأسنان"},
+  // === DENTAL - علاج اللثة ===
+  {code:"D1",serviceName:"كحت لربع الفم",priceSAR:800,department:"Dental",section:"علاج اللثة"},
+  {code:"D2",serviceName:"جراحة لثة متقدمة",priceSAR:1500,department:"Dental",section:"علاج اللثة"},
+  {code:"D3",serviceName:"معالجة توزيجه الأنسجة GTR",priceSAR:2500,department:"Dental",section:"علاج اللثة"},
+  {code:"D4",serviceName:"تجريف الجيوب اللثوية للسن الواحد",priceSAR:200,department:"Dental",section:"علاج اللثة"},
+  {code:"D5",serviceName:"قص اللثة والعظم للفكين",priceSAR:5000,department:"Dental",section:"علاج اللثة"},
+  {code:"D6",serviceName:"قص اللثة فقط للسن الواحد",priceSAR:500,department:"Dental",section:"علاج اللثة"},
+  {code:"D7",serviceName:"قص اللثة والعظم للسن الواحد",priceSAR:1000,department:"Dental",section:"علاج اللثة"},
+  {code:"D8",serviceName:"تطويل التاج التجميلي للفك الواحد",priceSAR:6000,department:"Dental",section:"علاج اللثة"},
+  // === DENTAL - علاج الأطفال ===
+  {code:"K1",serviceName:"كشف أطفال",priceSAR:150,department:"Dental",section:"علاج الأطفال"},
+  {code:"K2",serviceName:"زيارة متابعة (كشف - تنظيف - فلوريد)",priceSAR:250,department:"Dental",section:"علاج الأطفال"},
+  {code:"K3",serviceName:"خلع سن دائم لطفل",priceSAR:600,department:"Dental",section:"علاج الأطفال"},
+  {code:"K4",serviceName:"تنظيف الأسنان اللبنية بدون إزالة الرواسب الجيرية",priceSAR:100,department:"Dental",section:"علاج الأطفال"},
+  {code:"K5",serviceName:"تنظيف الأسنان اللبنية مع رواسب جيرية",priceSAR:200,department:"Dental",section:"علاج الأطفال"},
+  {code:"K6",serviceName:"تطبيق جل الفلورايد على الفكين",priceSAR:150,department:"Dental",section:"علاج الأطفال"},
+  {code:"K7",serviceName:"حشوة سطحين للأسنان اللبنية",priceSAR:300,department:"Dental",section:"علاج الأطفال"},
+  {code:"K8",serviceName:"تطبيق المادة البلاستيكية السادة للشقوق",priceSAR:150,department:"Dental",section:"علاج الأطفال"},
+  {code:"K9",serviceName:"حشوة سطح واحد للأسنان اللبنية للأطفال",priceSAR:200,department:"Dental",section:"علاج الأطفال"},
+  {code:"K10",serviceName:"حشوة تجميلية لسن أمامي لبني",priceSAR:400,department:"Dental",section:"علاج الأطفال"},
+  {code:"K11",serviceName:"حشوة تجميلية للأسنان الدائمة للأطفال",priceSAR:300,department:"Dental",section:"علاج الأطفال"},
+  {code:"K12",serviceName:"حشوة سطحين للأسنان الدائمة للأطفال",priceSAR:400,department:"Dental",section:"علاج الأطفال"},
+  {code:"K13",serviceName:"حشوة تجميلية لسن أمامي دائم",priceSAR:500,department:"Dental",section:"علاج الأطفال"},
+  {code:"K14",serviceName:"إزالة لثة زائدة وملتهبة",priceSAR:300,department:"Dental",section:"علاج الأطفال"},
+  {code:"K15",serviceName:"فتح لثة لتسهيل ظهور السن",priceSAR:300,department:"Dental",section:"علاج الأطفال"},
+  {code:"K16",serviceName:"فتح خراج لسن لبني",priceSAR:200,department:"Dental",section:"علاج الأطفال"},
+  {code:"K17",serviceName:"خلع سن لبني بسيط",priceSAR:200,department:"Dental",section:"علاج الأطفال"},
+  {code:"K18",serviceName:"خلع سن لبني معقد",priceSAR:300,department:"Dental",section:"علاج الأطفال"},
+  {code:"K19",serviceName:"خلع سن زائد لطفل",priceSAR:500,department:"Dental",section:"علاج الأطفال"},
+  {code:"K20",serviceName:"تغطية مباشرة لعصب الأسنان",priceSAR:450,department:"Dental",section:"علاج الأطفال"},
+  {code:"K21",serviceName:"تغطية غير مباشرة لعصب الأسنان",priceSAR:450,department:"Dental",section:"علاج الأطفال"},
+  {code:"K22",serviceName:"بتر عصب الحجرة اللبية الجزئية لضرس لبني",priceSAR:450,department:"Dental",section:"علاج الأطفال"},
+  {code:"K23",serviceName:"علاج عصب الأسنان الكامل للأسنان اللبنية",priceSAR:500,department:"Dental",section:"علاج الأطفال"},
+  {code:"K24",serviceName:"بتر عصب الحجرة اللبية الجزئي لضرس دائم",priceSAR:700,department:"Dental",section:"علاج الأطفال"},
+  {code:"K25",serviceName:"تاج ستانليس ستيل - سن لبني",priceSAR:400,department:"Dental",section:"علاج الأطفال"},
+  {code:"K26",serviceName:"تاج زيركون للأسنان اللبنية الأمامية",priceSAR:550,department:"Dental",section:"علاج الأطفال"},
+  {code:"K27",serviceName:"تاج ستانليس ستيل - سن دائم",priceSAR:600,department:"Dental",section:"علاج الأطفال"},
+  {code:"K28",serviceName:"تاج تجميلي لضرس لبني",priceSAR:700,department:"Dental",section:"علاج الأطفال"},
+  {code:"K29",serviceName:"جبيرة لتثبيت الأسنان",priceSAR:500,department:"Dental",section:"علاج الأطفال"},
+  {code:"K30",serviceName:"واقي الأسنان الشفاف للحماية",priceSAR:500,department:"Dental",section:"علاج الأطفال"},
+  {code:"K31",serviceName:"حافظ مسافة داخل العيادة",priceSAR:600,department:"Dental",section:"علاج الأطفال"},
+  {code:"K32",serviceName:"حافظ مسافة (تحضير المعمل)",priceSAR:1000,department:"Dental",section:"علاج الأطفال"},
+  {code:"K33",serviceName:"جهاز إرجاع المسافة",priceSAR:1500,department:"Dental",section:"علاج الأطفال"},
+  {code:"K34",serviceName:"جهاز حافظ مسافة مع أسنان أمامية",priceSAR:1500,department:"Dental",section:"علاج الأطفال"},
+  {code:"K35",serviceName:"تركيب جهاز قاطع العادات السلوكية",priceSAR:1000,department:"Dental",section:"علاج الأطفال"},
+  {code:"K37",serviceName:"جلسة تسكين بغاز النيتروس (الغاز الضاحك)",priceSAR:500,department:"Dental",section:"علاج الأطفال"},
+  {code:"K38",serviceName:"إجراء مجموعة معالجات للأطفال تحت التخدير الكامل",priceSAR:12000,department:"Dental",section:"علاج الأطفال"},
+  // === DERMATOLOGY ===
+  {code:"L1",serviceName:"كشف الاستشاري",priceSAR:150,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L2",serviceName:"كشف أخصائي",priceSAR:70,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L3",serviceName:"مراجعة",priceSAR:0,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L4",serviceName:"حقنة للجلد (intralesional)",priceSAR:120,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L5",serviceName:"حقنة عضل",priceSAR:120,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L6",serviceName:"حقن ندبة جلدية بالكورتيزون",priceSAR:150,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L7",serviceName:"حقن ثعلبة منطقة",priceSAR:150,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L8",serviceName:"فحص هيدروكسيد البوتاسيوم (KOH)",priceSAR:160,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L9",serviceName:"فحص التحسس الجلدي",priceSAR:500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L10",serviceName:"كي بالتبريد (1)",priceSAR:100,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L11",serviceName:"كي بالتبريد (2)",priceSAR:150,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L12",serviceName:"كي بالتبريد (3)",priceSAR:200,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L13",serviceName:"كي بالتبريد (4)",priceSAR:250,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L14",serviceName:"إزالة زوائد جلدية (1)",priceSAR:100,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L15",serviceName:"إزالة زوائد جلدية (2)",priceSAR:150,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L16",serviceName:"إزالة زوائد جلدية (3)",priceSAR:200,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L17",serviceName:"إزالة زوائد جلدية (4)",priceSAR:250,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L18",serviceName:"إزالة ثآليل 1-4 بالكي الكهربائي",priceSAR:250,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L19",serviceName:"إزالة ثآليل 5 فأكثر بالكي الكهربائي",priceSAR:290,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L20",serviceName:"كي ثالول بسيط بالكي الكهربائي",priceSAR:150,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L21",serviceName:"إزالة مسمار لحمي كبير بالكي الكهربائي",priceSAR:300,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L22",serviceName:"كي مليساء بالجلد",priceSAR:255,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L23",serviceName:"سنفرة الجلد أو تلميع كريستالي",priceSAR:300,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L24",serviceName:"تنعيم كريستالي مع ماسك",priceSAR:500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L25",serviceName:"تنعيم كريستالي للوجه والعنق",priceSAR:500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L26",serviceName:"تنظيف بشرة مع ماسك",priceSAR:400,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L27",serviceName:"تقشير كريستالي للوجه",priceSAR:350,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L28",serviceName:"قناع الذهب",priceSAR:500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L29",serviceName:"ماسك للبشرة الحساسة",priceSAR:400,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L30",serviceName:"ماسك فيتامين سي",priceSAR:150,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L31",serviceName:"تنظيف بشرة عادي",priceSAR:200,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L32",serviceName:"تنظيف بشرة عميق",priceSAR:400,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L33",serviceName:"ميزو سيليولايت 1 (حقن إذابة دهون)",priceSAR:300,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L34",serviceName:"ميزو سيليولايت 2 (حقن إذابة دهون)",priceSAR:400,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L35",serviceName:"ميزو سيليولايت 3 (حقن إذابة دهون)",priceSAR:500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L36",serviceName:"فيلر شفايف أو خدود 1مل",priceSAR:1500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L37",serviceName:"فيلر",priceSAR:1200,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L38",serviceName:"تقشير السايمل أو الاميلان (التقشير البارد)",priceSAR:2000,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L39",serviceName:"التقشير الكيميائي 20%",priceSAR:350,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L40",serviceName:"التقشير الكيميائي 35%",priceSAR:400,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L41",serviceName:"جلسة ميزوثيرابي للوجه",priceSAR:500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L42",serviceName:"جلسة ميزوثيرابي للشعر",priceSAR:500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L43",serviceName:"جلسة بلازما للوجه + ديرما",priceSAR:1200,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L44",serviceName:"جلسة نضارة وشد",priceSAR:1800,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L45",serviceName:"جلسة كاربوكسي للعين أو للتشققات",priceSAR:300,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L46",serviceName:"ماسك حول العين أو ميزوثيرابي حول العين",priceSAR:250,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L47",serviceName:"حقن بوتكس للوجه كامل",priceSAR:2000,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L48",serviceName:"حقن بوتكس لزيادة التعرق",priceSAR:2000,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L49",serviceName:"حقن الابتسامة اللثوية",priceSAR:600,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L50",serviceName:"حقن بوتكس تصغير الأنف",priceSAR:600,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L51",serviceName:"حقن بوتكس لرفع الحاجب",priceSAR:600,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L52",serviceName:"حقن بوتكس لتجاعيد الجبهة وحول العين",priceSAR:1500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L53",serviceName:"حقن بوتكس للرقبة (نفرتيتي لاين)",priceSAR:1500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L54",serviceName:"جلسة نحت قوام للمنطقة الواحدة",priceSAR:800,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L55",serviceName:"3 جلسات نحت قوام للمنطقة الواحدة",priceSAR:1800,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L56",serviceName:"جلسة الهايفو لشد الوجه",priceSAR:3000,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L57",serviceName:"جلسة الهايفو للرقبة",priceSAR:1500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L58",serviceName:"شد الوجه بالخيوط الفرنسية أو الأمريكية (الزوج)",priceSAR:3000,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L59",serviceName:"جلسة إذابة الذقن المزدوجة (حقن)",priceSAR:500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L60",serviceName:"شد الوجه بالخيوط الكورية (الزوج)",priceSAR:1500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L61",serviceName:"جلسة حقن إذابة الدهون",priceSAR:1000,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L62",serviceName:"3 جلسات حقن إذابة الدهون",priceSAR:2500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L63",serviceName:"حقن كالسيوم",priceSAR:2500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L64",serviceName:"حقن الجسم",priceSAR:2500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L65",serviceName:"إذابة فيلر",priceSAR:500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L66",serviceName:"توريد شفايف بالحقن",priceSAR:500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L67",serviceName:"خيط النضارة",priceSAR:200,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L68",serviceName:"جلسة اسكارلت",priceSAR:1000,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L69",serviceName:"جلسة سيلفيرم",priceSAR:1500,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L110",serviceName:"حقنة سينامون",priceSAR:1322,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L111",serviceName:"حقنة العنبر 3مل",priceSAR:722,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L112",serviceName:"جلسة شد مائي بولي لاكتيك أسيد",priceSAR:522,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L113",serviceName:"جلسة شد مائي بولي لاكتيك أسيد (متقدمة)",priceSAR:922,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L114",serviceName:"جلسة الريتش",priceSAR:2722,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L115",serviceName:"حقنة فيلر لليد 2مل",priceSAR:922,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L116",serviceName:"حقنة فيلر لليد 2مل (بريميوم)",priceSAR:1422,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L117",serviceName:"بوتكس الرقبة",priceSAR:422,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L118",serviceName:"بوتكس الرقبة (متقدم)",priceSAR:1322,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L119",serviceName:"تقشير بارد",priceSAR:322,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L120",serviceName:"تقشير بارد (متقدم)",priceSAR:922,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L121",serviceName:"جلسة ديرما بن",priceSAR:422,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L122",serviceName:"جلسة تقطيع ندبات",priceSAR:322,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L123",serviceName:"جلسة اكسوزو للشعر",priceSAR:1722,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L124",serviceName:"جلسة ميزا ثيرابي للشعر",priceSAR:622,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L125",serviceName:"جلسة علاج الهالات",priceSAR:522,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L126",serviceName:"جلسة اكسوزو للبشرة",priceSAR:1322,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L127",serviceName:"جلسة بلازما",priceSAR:422,department:"Dermatology",section:"اجراء الجلدية"},
+  {code:"L128",serviceName:"جلسة بلازما (متقدمة)",priceSAR:2622,department:"Dermatology",section:"اجراء الجلدية"},
+  // === LASER ===
+  {code:"L70",serviceName:"جلسة فراكشنال للوجه",priceSAR:800,department:"Laser",section:"اجراء الليزر"},
+  {code:"L71",serviceName:"جلسة فراكشنال منطقة أخرى كبيرة",priceSAR:800,department:"Laser",section:"اجراء الليزر"},
+  {code:"L72",serviceName:"جلسة فراكشنال منطقة صغيرة بالوجه",priceSAR:300,department:"Laser",section:"اجراء الليزر"},
+  {code:"L73",serviceName:"ليزر إزالة الشعر كامل الجسم",priceSAR:1000,department:"Laser",section:"اجراء الليزر"},
+  {code:"L74",serviceName:"ليزر إزالة الشعر بدون ظهر وبطن",priceSAR:800,department:"Laser",section:"اجراء الليزر"},
+  {code:"L75",serviceName:"4 جلسات فل بدي بدون ظهر وبطن",priceSAR:2800,department:"Laser",section:"اجراء الليزر"},
+  {code:"L76",serviceName:"4 جلسات فل بدي كامل الجسم",priceSAR:3000,department:"Laser",section:"اجراء الليزر"},
+  {code:"L77",serviceName:"ليزر إزالة شعر وجه كامل",priceSAR:350,department:"Laser",section:"اجراء الليزر"},
+  {code:"L78",serviceName:"ليزر تحديد شعر الذقن والشارب",priceSAR:300,department:"Laser",section:"اجراء الليزر"},
+  {code:"L79",serviceName:"ليزر إزالة شعر المنطقة الحساسة (بيكيني)",priceSAR:400,department:"Laser",section:"اجراء الليزر"},
+  {code:"L80",serviceName:"ليزر إزالة شعر الإبطين",priceSAR:300,department:"Laser",section:"اجراء الليزر"},
+  {code:"L81",serviceName:"ليزر إزالة شعر الساق جلسة واحدة",priceSAR:350,department:"Laser",section:"اجراء الليزر"},
+  {code:"L82",serviceName:"ليزر إزالة شعر الذراع كامل",priceSAR:350,department:"Laser",section:"اجراء الليزر"},
+  {code:"L83",serviceName:"ليزر إزالة شعر الفخذ جلسة واحدة",priceSAR:400,department:"Laser",section:"اجراء الليزر"},
+  {code:"L84",serviceName:"إزالة شعر الطرف السفلي",priceSAR:500,department:"Laser",section:"اجراء الليزر"},
+  {code:"L85",serviceName:"ليزر إزالة شعر الظهر",priceSAR:300,department:"Laser",section:"اجراء الليزر"},
+  {code:"L86",serviceName:"ليزر إزالة شعر الصدر",priceSAR:300,department:"Laser",section:"اجراء الليزر"},
+  {code:"L87",serviceName:"ليزر إزالة شعر البطن",priceSAR:250,department:"Laser",section:"اجراء الليزر"},
+  {code:"L88",serviceName:"ليزر إزالة شعر الشارب",priceSAR:100,department:"Laser",section:"اجراء الليزر"},
+  {code:"L89",serviceName:"ليزر إزالة مناطق محددة (ميني ليزر)",priceSAR:600,department:"Laser",section:"اجراء الليزر"},
+  {code:"L90",serviceName:"حقن توريد شفايف بالليزر أو بالحقن",priceSAR:500,department:"Laser",section:"اجراء الليزر"},
+  {code:"L91",serviceName:"إزالة نمش جزء صغير",priceSAR:200,department:"Laser",section:"اجراء الليزر"},
+  {code:"L92",serviceName:"إزالة نمش جزء متوسط",priceSAR:400,department:"Laser",section:"اجراء الليزر"},
+  {code:"L93",serviceName:"إزالة نمش جزء كبير",priceSAR:600,department:"Laser",section:"اجراء الليزر"},
+  {code:"L94",serviceName:"إزالة وحمة سبابليس",priceSAR:200,department:"Laser",section:"اجراء الليزر"},
+  {code:"L95",serviceName:"إزالة وحمة بيكرز أو وحمة أوتا صغيرة",priceSAR:400,department:"Laser",section:"اجراء الليزر"},
+  {code:"L96",serviceName:"إزالة وحمة بيكرز أو وحمة أوتا متوسط",priceSAR:600,department:"Laser",section:"اجراء الليزر"},
+  {code:"L97",serviceName:"إزالة وحمة بيكرز أو وحمة أوتا كبير",priceSAR:800,department:"Laser",section:"اجراء الليزر"},
+  {code:"L98",serviceName:"جلسة إزالة كلف منطقة صغيرة",priceSAR:300,department:"Laser",section:"اجراء الليزر"},
+  {code:"L99",serviceName:"جلسة إزالة كلف منطقة متوسطة",priceSAR:400,department:"Laser",section:"اجراء الليزر"},
+  {code:"L100",serviceName:"جلسة إزالة كلف منطقة كبيرة",priceSAR:600,department:"Laser",section:"اجراء الليزر"},
+  {code:"L101",serviceName:"إزالة تاتو منطقة صغيرة",priceSAR:300,department:"Laser",section:"اجراء الليزر"},
+  {code:"L102",serviceName:"إزالة تاتو منطقة كبيرة",priceSAR:700,department:"Laser",section:"اجراء الليزر"},
+  {code:"L103",serviceName:"تشقير حواجب",priceSAR:250,department:"Laser",section:"اجراء الليزر"},
+  {code:"L104",serviceName:"تشقير شعر الوجه أو منطقة صغيرة",priceSAR:400,department:"Laser",section:"اجراء الليزر"},
+  {code:"L105",serviceName:"الليزر الكاربوني للنضارة (الوجه)",priceSAR:500,department:"Laser",section:"اجراء الليزر"},
+  {code:"L106",serviceName:"الليزر الكاربوني للنضارة (الرقبة)",priceSAR:400,department:"Laser",section:"اجراء الليزر"},
+  {code:"L107",serviceName:"جلسة ليزر لعلاج منطقة بها دوالي",priceSAR:500,department:"Laser",section:"اجراء الليزر"},
+  {code:"L108",serviceName:"جلسة علاج ضوئي للصدفية والبهاق NBUVB",priceSAR:250,department:"Laser",section:"اجراء الليزر"},
+  {code:"L109",serviceName:"إزالة تاتو منطقة متوسطة",priceSAR:400,department:"Laser",section:"اجراء الليزر"},
+];
+
+// ============================================================
+// STATE
+// ============================================================
+let state = {
+  tab: localStorage.getItem('apex_tab') || 'Dental',
+  search: localStorage.getItem('apex_search') || '',
+  section: localStorage.getItem('apex_section') || '',
+  favorites: JSON.parse(localStorage.getItem('apex_favorites') || '[]'),
+  theme: localStorage.getItem('apex_theme') || 'light',
+};
+
+// ============================================================
+// THEME
+// ============================================================
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  document.getElementById('themeToggle').textContent = t === 'dark' ? '☀️' : '🌙';
+  localStorage.setItem('apex_theme', t);
+  state.theme = t;
+}
+applyTheme(state.theme);
+document.getElementById('themeToggle').addEventListener('click', () => {
+  applyTheme(state.theme === 'dark' ? 'light' : 'dark');
+});
+
+// ============================================================
+// SECTION BADGE CONFIG
+// ============================================================
+const sectionConfig = {
+  'الكشف والاشعة': { cls: 'badge-examination', label: 'الكشف والإشعة' },
+  'العلاج التحفظي': { cls: 'badge-conservative', label: 'العلاج التحفظي' },
+  'علاج جذور الأسنان': { cls: 'badge-endodontics', label: 'علاج جذور الأسنان' },
+  'التركيبات': { cls: 'badge-prosthetics', label: 'التركيبات' },
+  'الجراحة وزراعة الأسنان': { cls: 'badge-surgery', label: 'الجراحة وزراعة الأسنان' },
+  'تقويم الأسنان': { cls: 'badge-orthodontics', label: 'تقويم الأسنان' },
+  'علاج اللثة': { cls: 'badge-periodontics', label: 'علاج اللثة' },
+  'علاج الأطفال': { cls: 'badge-pediatric', label: 'علاج الأطفال' },
+  'اجراء الجلدية': { cls: 'badge-dermatology', label: 'اجراء الجلدية' },
+  'اجراء الليزر': { cls: 'badge-laser', label: 'اجراء الليزر' },
+};
+
+function getBadgeCls(section) {
+  return (sectionConfig[section] || {cls:'badge-examination'}).cls;
+}
+
+// ============================================================
+// FILTER & RENDER
+// ============================================================
+function getFilteredServices() {
+  let src = SERVICES;
+  if (state.tab === 'Favorites') {
+    src = SERVICES.filter(s => state.favorites.includes(s.code));
+  } else {
+    src = SERVICES.filter(s => s.department === state.tab);
+  }
+  if (state.section) src = src.filter(s => s.section === state.section);
+  if (state.search) {
+    const q = state.search.trim().toLowerCase();
+    src = src.filter(s =>
+      s.serviceName.toLowerCase().includes(q) ||
+      s.code.toLowerCase().includes(q) ||
+      s.section.toLowerCase().includes(q)
+    );
+  }
+  return src;
+}
+
+function highlight(text, query) {
+  if (!query) return text;
+  const q = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return text.replace(new RegExp(`(${q})`, 'gi'), '<mark>$1</mark>');
+}
+
+function renderCards() {
+  const grid = document.getElementById('cardsGrid');
+  const services = getFilteredServices();
+  const q = state.search.trim().toLowerCase();
+
+  // Update counts
+  ['Dental','Dermatology','Laser'].forEach(dep => {
+    document.getElementById('cnt-' + dep).textContent =
+      SERVICES.filter(s => s.department === dep).length;
+  });
+  document.getElementById('cnt-Favorites').textContent = state.favorites.length;
+
+  // Results info
+  const totalInTab = state.tab === 'Favorites'
+    ? state.favorites.length
+    : SERVICES.filter(s => s.department === state.tab).length;
+  const info = document.getElementById('resultsCount');
+  if (q || state.section) {
+    info.textContent = `${services.length} من ${totalInTab} خدمة`;
+  } else {
+    info.textContent = `${services.length} خدمة`;
+  }
+
+  const filtersInfo = document.getElementById('activeFiltersInfo');
+  filtersInfo.style.display = (q || state.section) ? 'block' : 'none';
+  if (q || state.section) {
+    filtersInfo.textContent = `فلاتر نشطة: ${[q ? `"${state.search}"` : '', state.section].filter(Boolean).join(' • ')}`;
+  }
+
+  if (!services.length) {
+    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1">
+      <div class="icon">🔍</div>
+      <h3>لا توجد نتائج</h3>
+      <p>جرب تغيير كلمة البحث أو الفلاتر</p>
+    </div>`;
+    return;
+  }
+
+  grid.innerHTML = services.map(s => {
+    const isFav = state.favorites.includes(s.code);
+    const badgeCls = getBadgeCls(s.section);
+    return `<div class="service-card" data-code="${s.code}">
+      <div class="card-top">
+        <div class="card-name">${highlight(s.serviceName, q)}</div>
+        <button class="fav-btn ${isFav ? 'active' : ''}" data-code="${s.code}" title="إضافة للمفضلة">${isFav ? '⭐' : '☆'}</button>
+      </div>
+      <div><span class="card-section-badge ${badgeCls}">${s.section}</span></div>
+      <div class="card-bottom">
+        <div class="card-price">${s.priceSAR.toLocaleString('ar-SA')} <span>ر.س</span></div>
+        <div class="card-code-wrap">
+          <span class="card-code">${s.code}</span>
+          <button class="copy-btn" data-code="${s.code}" title="نسخ الكود">📋 نسخ</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Bind events
+  grid.querySelectorAll('.fav-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleFav(btn.dataset.code);
+    });
+  });
+  grid.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      copyCode(btn, btn.dataset.code);
+    });
+  });
+}
+
+function toggleFav(code) {
+  const idx = state.favorites.indexOf(code);
+  if (idx >= 0) state.favorites.splice(idx, 1);
+  else state.favorites.push(code);
+  localStorage.setItem('apex_favorites', JSON.stringify(state.favorites));
+  renderCards();
+}
+
+function copyCode(btn, code) {
+  navigator.clipboard.writeText(code).then(() => {
+    btn.textContent = '✅ تم';
+    btn.classList.add('copied');
+    showToast('✅ تم نسخ الكود: ' + code);
+    setTimeout(() => { btn.textContent = '📋 نسخ'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ============================================================
+// SECTION FILTER POPULATE
+// ============================================================
+function populateSectionFilter() {
+  const sel = document.getElementById('sectionFilter');
+  const currentTab = state.tab === 'Favorites' ? null : state.tab;
+  const sections = [...new Set(
+    SERVICES
+      .filter(s => !currentTab || s.department === currentTab)
+      .map(s => s.section)
+  )];
+  sel.innerHTML = '<option value="">جميع الأقسام</option>' +
+    sections.map(sec => `<option value="${sec}" ${state.section === sec ? 'selected' : ''}>${sec}</option>`).join('');
+}
+
+// ============================================================
+// TABS
+// ============================================================
+document.getElementById('tabs').addEventListener('click', (e) => {
+  const tab = e.target.closest('.tab');
+  if (!tab) return;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  state.tab = tab.dataset.tab;
+  state.section = '';
+  localStorage.setItem('apex_tab', state.tab);
+  localStorage.setItem('apex_section', '');
+  populateSectionFilter();
+  renderCards();
+});
+
+// ============================================================
+// SEARCH
+// ============================================================
+const searchInput = document.getElementById('searchInput');
+const searchClear = document.getElementById('searchClear');
+const autocomplete = document.getElementById('autocomplete');
+
+searchInput.value = state.search;
+
+searchInput.addEventListener('input', () => {
+  state.search = searchInput.value;
+  localStorage.setItem('apex_search', state.search);
+  searchClear.classList.toggle('visible', !!state.search);
+  updateAutocomplete();
+  renderCards();
+});
+
+searchClear.addEventListener('click', () => {
+  searchInput.value = '';
+  state.search = '';
+  localStorage.setItem('apex_search', '');
+  searchClear.classList.remove('visible');
+  autocomplete.classList.remove('show');
+  renderCards();
+  searchInput.focus();
+});
+
+function updateAutocomplete() {
+  const q = state.search.trim().toLowerCase();
+  if (!q || q.length < 1) { autocomplete.classList.remove('show'); return; }
+  const matches = SERVICES
+    .filter(s => s.serviceName.toLowerCase().includes(q) || s.code.toLowerCase().includes(q))
+    .slice(0, 6);
+  if (!matches.length) { autocomplete.classList.remove('show'); return; }
+  autocomplete.innerHTML = matches.map(s =>
+    `<div class="ac-item" data-name="${s.serviceName}">${s.serviceName.replace(new RegExp(`(${q})`, 'gi'), '<mark>$1</mark>')} <span style="color:var(--muted);font-size:11px">${s.code}</span></div>`
+  ).join('');
+  autocomplete.classList.add('show');
+  autocomplete.querySelectorAll('.ac-item').forEach(item => {
+    item.addEventListener('click', () => {
+      searchInput.value = item.dataset.name;
+      state.search = item.dataset.name;
+      localStorage.setItem('apex_search', state.search);
+      autocomplete.classList.remove('show');
+      searchClear.classList.add('visible');
+      renderCards();
+    });
+  });
+}
+
+document.addEventListener('click', (e) => {
+  if (!searchInput.contains(e.target) && !autocomplete.contains(e.target)) {
+    autocomplete.classList.remove('show');
+  }
+});
+
+// ============================================================
+// SECTION FILTER
+// ============================================================
+document.getElementById('sectionFilter').addEventListener('change', (e) => {
+  state.section = e.target.value;
+  localStorage.setItem('apex_section', state.section);
+  renderCards();
+});
+
+document.getElementById('resetFilters').addEventListener('click', () => {
+  state.search = '';
+  state.section = '';
+  searchInput.value = '';
+  searchClear.classList.remove('visible');
+  autocomplete.classList.remove('show');
+  localStorage.setItem('apex_search', '');
+  localStorage.setItem('apex_section', '');
+  populateSectionFilter();
+  renderCards();
+});
+
+// ============================================================
+// MODAL
+// ============================================================
+const overlay = document.getElementById('overlay');
+
+function openModal() {
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  // Restore tab
+  const tab = document.querySelector(`.tab[data-tab="${state.tab}"]`);
+  if (tab) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+  }
+  populateSectionFilter();
+  renderCards();
+}
+
+function closeModal() {
+  overlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('openModalBtn').addEventListener('click', openModal);
+document.getElementById('closeModal').addEventListener('click', closeModal);
+overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+
+// ============================================================
+// KEYBOARD SHORTCUTS
+// ============================================================
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+    e.preventDefault();
+    if (!overlay.classList.contains('active')) openModal();
+    setTimeout(() => searchInput.focus(), 100);
+  }
+});
+
+// ============================================================
+// ADMIN AUTH — كلمة المرور: apex2025
+// ============================================================
+const ADMIN_PASSWORD = 'apex2025';
+let adminLoggedIn = false;
+let secretClickCount = 0;
+let secretClickTimer = null;
+
+// Secret: triple-click on logo area activates admin panel
+// Secret: triple-click header logo OR hero logo triggers admin
+['headerLogo', 'heroLogoImg', 'secretTrigger'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('click', handleSecretClick);
+});
+
+function handleSecretClick() {
+  secretClickCount++;
+  clearTimeout(secretClickTimer);
+  secretClickTimer = setTimeout(() => { secretClickCount = 0; }, 800);
+  if (secretClickCount >= 3) {
+    secretClickCount = 0;
+    openAdminModal();
+  }
+}
+
+function openAdminModal() {
+  document.getElementById('adminOverlay').classList.add('active');
+  document.getElementById('adminInput').value = '';
+  document.getElementById('adminError').classList.remove('show');
+  document.getElementById('adminInput').classList.remove('error');
+  setTimeout(() => document.getElementById('adminInput').focus(), 100);
+}
+
+function closeAdminModal() {
+  document.getElementById('adminOverlay').classList.remove('active');
+}
+
+document.getElementById('adminLoginBtn').addEventListener('click', checkAdminPassword);
+document.getElementById('adminInput').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') checkAdminPassword();
+});
+document.getElementById('adminCancelBtn').addEventListener('click', closeAdminModal);
+document.getElementById('adminOverlay').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('adminOverlay')) closeAdminModal();
+});
+
+// Toggle password visibility
+document.getElementById('togglePw').addEventListener('click', () => {
+  const input = document.getElementById('adminInput');
+  input.type = input.type === 'password' ? 'text' : 'password';
+  document.getElementById('togglePw').textContent = input.type === 'password' ? '👁' : '🙈';
+});
+
+function checkAdminPassword() {
+  const val = document.getElementById('adminInput').value;
+  const input = document.getElementById('adminInput');
+  const error = document.getElementById('adminError');
+  if (val === ADMIN_PASSWORD) {
+    adminLoggedIn = true;
+    closeAdminModal();
+    // Show download button in modal header
+    const dlBtn = document.getElementById('adminDownloadBtn');
+    dlBtn.style.display = 'inline-flex';
+    showToast('🔓 تم تسجيل دخول الإدارة بنجاح');
+    // Auto-open modal
+    if (!document.getElementById('overlay').classList.contains('active')) openModal();
+  } else {
+    input.classList.add('error');
+    error.classList.add('show');
+    setTimeout(() => { input.classList.remove('error'); }, 400);
+  }
+}
+
+// Admin download button inside modal
+document.getElementById('adminDownloadBtn').addEventListener('click', () => {
+  if (!adminLoggedIn) return;
+  const json = JSON.stringify(SERVICES, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'apexcare-price-guide.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  showToast('📥 جاري تنزيل ملف JSON');
+});
+
+// ============================================================
+// FLOATING PARTICLES
+// ============================================================
+(function initParticles() {
+  const container = document.getElementById('particles');
+  if (!container) return;
+  const colors = ['#22a6a1','#7a5ea8','#f04a8a','#2dd4bf','#a78bfa'];
+  const count = 18;
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 6 + 3;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const left = Math.random() * 100;
+    const duration = Math.random() * 15 + 12;
+    const delay = Math.random() * 15;
+    p.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${left}%; bottom:0;
+      background:${color};
+      animation-duration:${duration}s;
+      animation-delay:${delay}s;
+    `;
+    container.appendChild(p);
+  }
+})();
+
+// ============================================================
+// STATS ON HERO
+// ============================================================
+function updateHeroStats() {
+  const dental = SERVICES.filter(s => s.department === 'Dental').length;
+  const derm = SERVICES.filter(s => s.department === 'Dermatology').length;
+  const laser = SERVICES.filter(s => s.department === 'Laser').length;
+  document.getElementById('statDental').textContent = dental;
+  document.getElementById('statDerm').textContent = derm;
+  document.getElementById('statLaser').textContent = laser;
+  document.getElementById('statTotal').textContent = SERVICES.length;
+}
+updateHeroStats();
+
+// ============================================================
+// INIT
+// ============================================================
+// Set initial tab active state
+const initTab = document.querySelector(`.tab[data-tab="${state.tab}"]`);
+if (initTab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  initTab.classList.add('active');
+}
+if (state.search) searchClear.classList.add('visible');
+</script>
+
+<!--
+==================================================
+قابلية الدمج:
+==================================================
+يمكن استخدام هذه الصفحة كملف مستقل:
+  1. افتح الملف مباشرة في المتصفح: price-guide.html
+  2. تأكد من وجود logo.png في نفس المجلد
+
+ويمكن إدراجها داخل موقع رئيسي باستخدام:
+  <iframe src="price-guide.html" width="100%" height="800" frameborder="0"></iframe>
+
+ملاحظات:
+- تعمل الصفحة بدون أي مكتبات خارجية (Vanilla HTML/CSS/JS)
+- يتم حفظ حالة المستخدم في localStorage
+- تدعم الوضع المظلم والفاتح
+- RTL كامل (عربي)
+==================================================
+-->
+
+</body>
+</html>
